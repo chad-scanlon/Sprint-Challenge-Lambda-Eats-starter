@@ -39,3 +39,13 @@ describe("Tests form-submit", function () {
     cy.get('[data-cy="submit-order-button"]').click();
   });
 });
+describe("Tests tracker", function () {
+  beforeEach(function () {
+    cy.visit("http://localhost:3000/pizza-form/");
+    cy.get("#size").select("large").should("have.value", "large");
+    cy.get("#sauce").select("Original").should("have.value", "Original");
+  });
+  it("track order", function () {
+    cy.get('[data-cy="track-order-button"]').click();
+  });
+});

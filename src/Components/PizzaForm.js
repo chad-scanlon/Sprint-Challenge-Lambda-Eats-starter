@@ -272,18 +272,19 @@ const PizzaForm = (props) => {
         {JSON.stringify(order, null, 2)}
         <p>Congrats! Pizza is on it's way</p>
         <p>An order confirmation was emailed to you</p>
+
+        <br />
+        <br />
+        <Link to="/pizza-tracker">
+          <button
+            disabled={formSubmit}
+            type="submit"
+            data-cy="track-order-button"
+          >
+            Track
+          </button>
+        </Link>
       </pre>
-      <br />
-      <br />
-      <Link to="/pizza-tracker">
-        <button
-          disabled={formSubmit}
-          type="submit"
-          data-cy="track-order-button"
-        >
-          Track your order
-        </button>
-      </Link>
     </>
   );
 };
